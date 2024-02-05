@@ -25,6 +25,8 @@ check_types:
 
 check_style:
 	flake8 sorttwonumbers.py --count --show-source --statistics
+	flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+	flake8 --count --show-source --statistics .
 
 # submit to kattis
 submit:
