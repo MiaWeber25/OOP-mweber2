@@ -12,6 +12,18 @@ Coursework for CSCI 375 - Object Oriented Programming and Design Patterns
 
 ## Assignments 
 
+### Assignment #1
+
+| Name | Value |
+| :--- | :--- |
+| Name | OOP-A1 - Python Basics |
+| Description | Review Python fundamentals and take online quizzes. |
+| Due Date | 13-Feb-2024 |
+| Status | Done |
+| Location | https://github.com/MiaWeber25/OOP-mweber2/tree/main/A1-review |
+| Self Grade | 100/100 |
+| Notes | Completed all requirements |
+
 ### Assignment #0
 
 | Name | Value |
