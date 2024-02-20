@@ -12,6 +12,19 @@ Coursework for CSCI 375 - Object Oriented Programming and Design Patterns
 
 ## Assignments 
 
+
+### Assignment #2
+
+| Name | Value |
+| :--- | :--- |
+| Name | OOP-A2 - Class and Object Oriented Design |
+| Description | Solve Kattis problem using OOD: Convex Polygon Area. |
+| Due Date | 27-Feb-2024 |
+| Status | Done |
+| Location | https://github.com/MiaWeber25/OOP-mweber2/tree/main/A2-OOD/convexpolygonarea |
+| Self Grade | 100/100 |
+| Notes | Completed all requirements. Made 3 submissions to Kattis because I misnamed the main file convexpolygonarea.py twice. |
+
 ### Assignment #1
 
 | Name | Value |
