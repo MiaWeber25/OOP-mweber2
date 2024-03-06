@@ -12,6 +12,17 @@ Coursework for CSCI 375 - Object Oriented Programming and Design Patterns
 
 ## Assignments 
 
+### Assignment #3
+
+| Name | Value |
+| :--- | :--- |
+| Name | OOP-A3 - OOD and Unit Testing |
+| Description | Solve Kattis problem using OOD: Morse Code Palindromes. Use hypothesis for unit testing. |
+| Due Date | 07-March-2024 |
+| Status | Done |
+| Location | https://github.com/MiaWeber25/OOP-mweber2/tree/main/A3-unittesting/morsecodepalindromes |
+| Self Grade | 100/100 |
+| Notes | Completed all requirements. |
 
 ### Assignment #2
 
