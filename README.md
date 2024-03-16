@@ -12,6 +12,18 @@ Coursework for CSCI 375 - Object Oriented Programming and Design Patterns
 
 ## Assignments 
 
+### Assignment #4
+
+| Name | Value |
+| :--- | :--- |
+| Name | OOP-A4 - Mocking and Hypothesis |
+| Description | Solve Kattis problem using OOD: Title Cost. Use hypothesis and mocking for unit testing. |
+| Due Date | 19-March-2024 |
+| Status | Done |
+| Location | https://github.com/MiaWeber25/OOP-mweber2/tree/main/A4-mocking/titlecost |
+| Self Grade | 100/100 |
+| Notes | Completed all requirements. Test coverage = 100% |
+
 ### Assignment #3
 
 | Name | Value |
