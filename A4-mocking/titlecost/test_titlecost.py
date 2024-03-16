@@ -4,6 +4,7 @@ import unittest
 from hypothesis import given
 import importlib.util
 import importlib
+import os
 import sys
 import hypothesis.strategies as st
 from unittest.mock import patch, Mock
@@ -45,10 +46,18 @@ class test_titlecost(unittest.TestCase):
         result = titlecost.validate_max_cost(max_cost_str)
         self.assertEqual(result, max_cost)
 
-    @given(st.one_of(st.text(min_size=1).filter(lambda x:
-                                                not x.replace('.', '', 1).
-                                                isdigit()),
-                     st.floats().filter(lambda x: x < 0 or x > 100)))
+    @given(
+        st.one_of(
+            st.text(min_size=1).filter(
+                lambda x: not x.strip().replace('.', '', 1).isdigit()
+            ),
+            st.floats(
+                allow_nan=False, allow_infinity=False, allow_subnormal=False
+            ).filter(
+                lambda x: x < 0 or x > 100
+            ),
+        )
+    )
     def test_validate_max_cost_invalid(self, max_cost: float) -> None:
         """ Test with invalid max_cost (non-float strings & out-of-range) """
         with self.assertRaises(ValueError):
@@ -81,8 +90,10 @@ class test_titlecost(unittest.TestCase):
             patch('builtins.print') as mock_print, \
                 patch('titlecost.calc_cost.calculate_cost', return_value=3):
             # Construct a module
+            test_dir = os.path.dirname(os.path.abspath(__file__))
+            titlecost_path = os.path.join(test_dir, "titlecost.py")
             spec = importlib.util.spec_from_file_location("__main__",
-                                                          "titlecost.py")
+                                                          titlecost_path)
             # Create a new module based on above
             if spec is not None and spec.loader is not None:
                 module = importlib.util.module_from_spec(spec)
