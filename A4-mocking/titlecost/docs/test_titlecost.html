@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>test_titlecost API documentation</title>
+<meta name="description" content="This module contains unit tests for titlecost.py" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>test_titlecost</code></h1>
+</header>
+<section id="section-intro">
+<p>This module contains unit tests for titlecost.py</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#! /usr/bin/env python3
+&#34;&#34;&#34; This module contains unit tests for titlecost.py &#34;&#34;&#34;
+import unittest
+from hypothesis import given
+import importlib.util
+import importlib
+import sys
+import hypothesis.strategies as st
+from unittest.mock import patch, Mock
+from types import ModuleType
+from io import StringIO
+from titlecost import titlecost  # Adjust import path as necessary
+
+
+class test_titlecost(unittest.TestCase):
+    &#34;&#34;&#34; Class to test that the
+    titlecost class works as intended &#34;&#34;&#34;
+    def test_init(self) -&gt; None:
+        &#34;&#34;&#34; Method to test the constructor of titlecost &#34;&#34;&#34;
+        instance = titlecost()
+        self.assertIsInstance(instance, titlecost)
+
+    #  @given(st.text(alphabet=st.characters(
+        #  whitelist_categories=(&#39;Lu&#39;, &#39;Ll&#39;)),
+        #  min_size=1, max_size=30))
+    @given(st.text(alphabet=st.characters(min_codepoint=65, max_codepoint=90) |
+                   st.characters(min_codepoint=97, max_codepoint=122),
+                   min_size=1, max_size=30))
+    def test_validate_title(self, title: str) -&gt; None:
+        &#34;&#34;&#34; Test with valid title &#34;&#34;&#34;
+        result = titlecost.validate_title(title)
+        self.assertEqual(title, result)
+
+    @given(st.text(min_size=0).filter(lambda x: not x.isalpha()
+                                      or len(x) &gt; 30))
+    def test_validate_title_invalid(self, title: str) -&gt; None:
+        &#34;&#34;&#34; Test with invalid title &#34;&#34;&#34;
+        with self.assertRaises(ValueError):
+            titlecost.validate_title(title)
+
+    @given(st.floats(min_value=0, max_value=100))
+    def test_validate_max_cost(self, max_cost: float) -&gt; None:
+        &#34;&#34;&#34; Test with valid max_cost (0-100)&#34;&#34;&#34;
+        max_cost_str = str(max_cost)
+        result = titlecost.validate_max_cost(max_cost_str)
+        self.assertEqual(result, max_cost)
+
+    @given(st.one_of(st.text(min_size=1).filter(lambda x:
+                                                not x.replace(&#39;.&#39;, &#39;&#39;, 1).
+                                                isdigit()),
+                     st.floats().filter(lambda x: x &lt; 0 or x &gt; 100)))
+    def test_validate_max_cost_invalid(self, max_cost: float) -&gt; None:
+        &#34;&#34;&#34; Test with invalid max_cost (non-float strings &amp; out-of-range) &#34;&#34;&#34;
+        with self.assertRaises(ValueError):
+            str_max_cost = str(max_cost)
+            titlecost.validate_max_cost(str_max_cost)
+
+    @patch(&#39;sys.stdin&#39;, new_callable=lambda: StringIO(&#39;newMovie 10&#39;))
+    @patch(&#39;builtins.print&#39;)
+    def test_solve(self, mock_print: Mock, mock_stdin: Mock) -&gt; None:
+        &#34;&#34;&#34; Test valid input &#34;&#34;&#34;
+        t = titlecost()
+        t.solve()
+        mock_print.assert_called_once_with(8.0)
+
+    @patch(&#39;builtins.input&#39;, return_value=&#39;movieTitle 15&#39;)
+    @patch(&#39;titlecost.calc_cost.calculate_cost&#39;, return_value=10)
+    @patch(&#39;builtins.print&#39;)
+    def test_solve2(self, mock_print: Mock, mock_calc_cost: Mock,
+                    mock_input: Mock) -&gt; None:
+        &#34;&#34;&#34; test with mocked input and calc_cost (import guard) &#34;&#34;&#34;
+        t = titlecost()
+        t.solve()
+        mock_calc_cost.assert_called_once_with(&#39;movieTitle&#39;)
+        mock_print.assert_called_once_with(10)
+
+    def test_import_guard(self) -&gt; None:
+        &#34;&#34;&#34;Test the if __name__ == &#39;__main__&#39;: block of titlecost.py.&#34;&#34;&#34;
+        # Mock input and print functions
+        with patch(&#39;builtins.input&#39;, return_value=&#39;movie 3&#39;), \
+            patch(&#39;builtins.print&#39;) as mock_print, \
+                patch(&#39;titlecost.calc_cost.calculate_cost&#39;, return_value=3):
+            # Construct a module
+            spec = importlib.util.spec_from_file_location(&#34;__main__&#34;,
+                                                          &#34;titlecost.py&#34;)
+            # Create a new module based on above
+            if spec is not None and spec.loader is not None:
+                module = importlib.util.module_from_spec(spec)
+                assert isinstance(module, ModuleType)
+            # Add the module to sys.modules
+                sys.modules[&#34;__main__&#34;] = module
+            # Execute the module&#39;s code
+                spec.loader.exec_module(module)
+                mock_print.assert_called_once_with(3)
+            else:
+                self.fail()
+
+
+if __name__ == &#34;__main__&#34;:
+    unittest.main()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="test_titlecost.test_titlecost"><code class="flex name class">
+<span>class <span class="ident">test_titlecost</span></span>
+<span>(</span><span>methodName='runTest')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Class to test that the
+titlecost class works as intended </p>
+<p>Create an instance of the class that will use the named test
+method when executed. Raises a ValueError if the instance does
+not have a method with the specified name.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class test_titlecost(unittest.TestCase):
+    &#34;&#34;&#34; Class to test that the
+    titlecost class works as intended &#34;&#34;&#34;
+    def test_init(self) -&gt; None:
+        &#34;&#34;&#34; Method to test the constructor of titlecost &#34;&#34;&#34;
+        instance = titlecost()
+        self.assertIsInstance(instance, titlecost)
+
+    #  @given(st.text(alphabet=st.characters(
+        #  whitelist_categories=(&#39;Lu&#39;, &#39;Ll&#39;)),
+        #  min_size=1, max_size=30))
+    @given(st.text(alphabet=st.characters(min_codepoint=65, max_codepoint=90) |
+                   st.characters(min_codepoint=97, max_codepoint=122),
+                   min_size=1, max_size=30))
+    def test_validate_title(self, title: str) -&gt; None:
+        &#34;&#34;&#34; Test with valid title &#34;&#34;&#34;
+        result = titlecost.validate_title(title)
+        self.assertEqual(title, result)
+
+    @given(st.text(min_size=0).filter(lambda x: not x.isalpha()
+                                      or len(x) &gt; 30))
+    def test_validate_title_invalid(self, title: str) -&gt; None:
+        &#34;&#34;&#34; Test with invalid title &#34;&#34;&#34;
+        with self.assertRaises(ValueError):
+            titlecost.validate_title(title)
+
+    @given(st.floats(min_value=0, max_value=100))
+    def test_validate_max_cost(self, max_cost: float) -&gt; None:
+        &#34;&#34;&#34; Test with valid max_cost (0-100)&#34;&#34;&#34;
+        max_cost_str = str(max_cost)
+        result = titlecost.validate_max_cost(max_cost_str)
+        self.assertEqual(result, max_cost)
+
+    @given(st.one_of(st.text(min_size=1).filter(lambda x:
+                                                not x.replace(&#39;.&#39;, &#39;&#39;, 1).
+                                                isdigit()),
+                     st.floats().filter(lambda x: x &lt; 0 or x &gt; 100)))
+    def test_validate_max_cost_invalid(self, max_cost: float) -&gt; None:
+        &#34;&#34;&#34; Test with invalid max_cost (non-float strings &amp; out-of-range) &#34;&#34;&#34;
+        with self.assertRaises(ValueError):
+            str_max_cost = str(max_cost)
+            titlecost.validate_max_cost(str_max_cost)
+
+    @patch(&#39;sys.stdin&#39;, new_callable=lambda: StringIO(&#39;newMovie 10&#39;))
+    @patch(&#39;builtins.print&#39;)
+    def test_solve(self, mock_print: Mock, mock_stdin: Mock) -&gt; None:
+        &#34;&#34;&#34; Test valid input &#34;&#34;&#34;
+        t = titlecost()
+        t.solve()
+        mock_print.assert_called_once_with(8.0)
+
+    @patch(&#39;builtins.input&#39;, return_value=&#39;movieTitle 15&#39;)
+    @patch(&#39;titlecost.calc_cost.calculate_cost&#39;, return_value=10)
+    @patch(&#39;builtins.print&#39;)
+    def test_solve2(self, mock_print: Mock, mock_calc_cost: Mock,
+                    mock_input: Mock) -&gt; None:
+        &#34;&#34;&#34; test with mocked input and calc_cost (import guard) &#34;&#34;&#34;
+        t = titlecost()
+        t.solve()
+        mock_calc_cost.assert_called_once_with(&#39;movieTitle&#39;)
+        mock_print.assert_called_once_with(10)
+
+    def test_import_guard(self) -&gt; None:
+        &#34;&#34;&#34;Test the if __name__ == &#39;__main__&#39;: block of titlecost.py.&#34;&#34;&#34;
+        # Mock input and print functions
+        with patch(&#39;builtins.input&#39;, return_value=&#39;movie 3&#39;), \
+            patch(&#39;builtins.print&#39;) as mock_print, \
+                patch(&#39;titlecost.calc_cost.calculate_cost&#39;, return_value=3):
+            # Construct a module
+            spec = importlib.util.spec_from_file_location(&#34;__main__&#34;,
+                                                          &#34;titlecost.py&#34;)
+            # Create a new module based on above
+            if spec is not None and spec.loader is not None:
+                module = importlib.util.module_from_spec(spec)
+                assert isinstance(module, ModuleType)
+            # Add the module to sys.modules
+                sys.modules[&#34;__main__&#34;] = module
+            # Execute the module&#39;s code
+                spec.loader.exec_module(module)
+                mock_print.assert_called_once_with(3)
+            else:
+                self.fail()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>unittest.case.TestCase</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="test_titlecost.test_titlecost.test_import_guard"><code class="name flex">
+<span>def <span class="ident">test_import_guard</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test the if <strong>name</strong> == '<strong>main</strong>': block of titlecost.py.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_import_guard(self) -&gt; None:
+    &#34;&#34;&#34;Test the if __name__ == &#39;__main__&#39;: block of titlecost.py.&#34;&#34;&#34;
+    # Mock input and print functions
+    with patch(&#39;builtins.input&#39;, return_value=&#39;movie 3&#39;), \
+        patch(&#39;builtins.print&#39;) as mock_print, \
+            patch(&#39;titlecost.calc_cost.calculate_cost&#39;, return_value=3):
+        # Construct a module
+        spec = importlib.util.spec_from_file_location(&#34;__main__&#34;,
+                                                      &#34;titlecost.py&#34;)
+        # Create a new module based on above
+        if spec is not None and spec.loader is not None:
+            module = importlib.util.module_from_spec(spec)
+            assert isinstance(module, ModuleType)
+        # Add the module to sys.modules
+            sys.modules[&#34;__main__&#34;] = module
+        # Execute the module&#39;s code
+            spec.loader.exec_module(module)
+            mock_print.assert_called_once_with(3)
+        else:
+            self.fail()</code></pre>
+</details>
+</dd>
+<dt id="test_titlecost.test_titlecost.test_init"><code class="name flex">
+<span>def <span class="ident">test_init</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Method to test the constructor of titlecost</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def test_init(self) -&gt; None:
+    &#34;&#34;&#34; Method to test the constructor of titlecost &#34;&#34;&#34;
+    instance = titlecost()
+    self.assertIsInstance(instance, titlecost)
+
+#  @given(st.text(alphabet=st.characters(
+    #  whitelist_categories=(&#39;Lu&#39;, &#39;Ll&#39;)),
+    #  min_size=1, max_size=30))</code></pre>
+</details>
+</dd>
+<dt id="test_titlecost.test_titlecost.test_solve"><code class="name flex">
+<span>def <span class="ident">test_solve</span></span>(<span>self, mock_print: unittest.mock.Mock, mock_stdin: unittest.mock.Mock) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test valid input</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@patch(&#39;sys.stdin&#39;, new_callable=lambda: StringIO(&#39;newMovie 10&#39;))
+@patch(&#39;builtins.print&#39;)
+def test_solve(self, mock_print: Mock, mock_stdin: Mock) -&gt; None:
+    &#34;&#34;&#34; Test valid input &#34;&#34;&#34;
+    t = titlecost()
+    t.solve()
+    mock_print.assert_called_once_with(8.0)</code></pre>
+</details>
+</dd>
+<dt id="test_titlecost.test_titlecost.test_solve2"><code class="name flex">
+<span>def <span class="ident">test_solve2</span></span>(<span>self, mock_print: unittest.mock.Mock, mock_calc_cost: unittest.mock.Mock, mock_input: unittest.mock.Mock) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>test with mocked input and calc_cost (import guard)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@patch(&#39;builtins.input&#39;, return_value=&#39;movieTitle 15&#39;)
+@patch(&#39;titlecost.calc_cost.calculate_cost&#39;, return_value=10)
+@patch(&#39;builtins.print&#39;)
+def test_solve2(self, mock_print: Mock, mock_calc_cost: Mock,
+                mock_input: Mock) -&gt; None:
+    &#34;&#34;&#34; test with mocked input and calc_cost (import guard) &#34;&#34;&#34;
+    t = titlecost()
+    t.solve()
+    mock_calc_cost.assert_called_once_with(&#39;movieTitle&#39;)
+    mock_print.assert_called_once_with(10)</code></pre>
+</details>
+</dd>
+<dt id="test_titlecost.test_titlecost.test_validate_max_cost"><code class="name flex">
+<span>def <span class="ident">test_validate_max_cost</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test with valid max_cost (0-100)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@given(st.floats(min_value=0, max_value=100))
+def test_validate_max_cost(self, max_cost: float) -&gt; None:
+    &#34;&#34;&#34; Test with valid max_cost (0-100)&#34;&#34;&#34;
+    max_cost_str = str(max_cost)
+    result = titlecost.validate_max_cost(max_cost_str)
+    self.assertEqual(result, max_cost)</code></pre>
+</details>
+</dd>
+<dt id="test_titlecost.test_titlecost.test_validate_max_cost_invalid"><code class="name flex">
+<span>def <span class="ident">test_validate_max_cost_invalid</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test with invalid max_cost (non-float strings &amp; out-of-range)</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@given(st.one_of(st.text(min_size=1).filter(lambda x:
+                                            not x.replace(&#39;.&#39;, &#39;&#39;, 1).
+                                            isdigit()),
+                 st.floats().filter(lambda x: x &lt; 0 or x &gt; 100)))
+def test_validate_max_cost_invalid(self, max_cost: float) -&gt; None:
+    &#34;&#34;&#34; Test with invalid max_cost (non-float strings &amp; out-of-range) &#34;&#34;&#34;
+    with self.assertRaises(ValueError):
+        str_max_cost = str(max_cost)
+        titlecost.validate_max_cost(str_max_cost)</code></pre>
+</details>
+</dd>
+<dt id="test_titlecost.test_titlecost.test_validate_title"><code class="name flex">
+<span>def <span class="ident">test_validate_title</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test with valid title</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@given(st.text(alphabet=st.characters(min_codepoint=65, max_codepoint=90) |
+               st.characters(min_codepoint=97, max_codepoint=122),
+               min_size=1, max_size=30))
+def test_validate_title(self, title: str) -&gt; None:
+    &#34;&#34;&#34; Test with valid title &#34;&#34;&#34;
+    result = titlecost.validate_title(title)
+    self.assertEqual(title, result)</code></pre>
+</details>
+</dd>
+<dt id="test_titlecost.test_titlecost.test_validate_title_invalid"><code class="name flex">
+<span>def <span class="ident">test_validate_title_invalid</span></span>(<span>self) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Test with invalid title</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@given(st.text(min_size=0).filter(lambda x: not x.isalpha()
+                                  or len(x) &gt; 30))
+def test_validate_title_invalid(self, title: str) -&gt; None:
+    &#34;&#34;&#34; Test with invalid title &#34;&#34;&#34;
+    with self.assertRaises(ValueError):
+        titlecost.validate_title(title)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="test_titlecost.test_titlecost" href="#test_titlecost.test_titlecost">test_titlecost</a></code></h4>
+<ul class="">
+<li><code><a title="test_titlecost.test_titlecost.test_import_guard" href="#test_titlecost.test_titlecost.test_import_guard">test_import_guard</a></code></li>
+<li><code><a title="test_titlecost.test_titlecost.test_init" href="#test_titlecost.test_titlecost.test_init">test_init</a></code></li>
+<li><code><a title="test_titlecost.test_titlecost.test_solve" href="#test_titlecost.test_titlecost.test_solve">test_solve</a></code></li>
+<li><code><a title="test_titlecost.test_titlecost.test_solve2" href="#test_titlecost.test_titlecost.test_solve2">test_solve2</a></code></li>
+<li><code><a title="test_titlecost.test_titlecost.test_validate_max_cost" href="#test_titlecost.test_titlecost.test_validate_max_cost">test_validate_max_cost</a></code></li>
+<li><code><a title="test_titlecost.test_titlecost.test_validate_max_cost_invalid" href="#test_titlecost.test_titlecost.test_validate_max_cost_invalid">test_validate_max_cost_invalid</a></code></li>
+<li><code><a title="test_titlecost.test_titlecost.test_validate_title" href="#test_titlecost.test_titlecost.test_validate_title">test_validate_title</a></code></li>
+<li><code><a title="test_titlecost.test_titlecost.test_validate_title_invalid" href="#test_titlecost.test_titlecost.test_validate_title_invalid">test_validate_title_invalid</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
