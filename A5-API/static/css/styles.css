@@ -1,0 +1,21 @@
+.btn-custom {
+    background-color: #f06a74;
+    border-color: #f06a74;
+    color: white;
+}
+.btn-custom:hover {
+    background-color: #c54c58;
+    border-color: #c54c58;
+}
+
+.card {
+    background-color: transparent; /* semi-transparent white */
+}
+
+body {
+    background: linear-gradient(to right top, #ff7e5f, #feb47b, #86e3ce, #d5e4f1, #004e92);
+    height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

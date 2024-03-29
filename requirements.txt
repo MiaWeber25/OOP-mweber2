@@ -8,3 +8,5 @@ autopep8
 lxml
 requests
 kattis-cli
+Flask
+Werkzeug

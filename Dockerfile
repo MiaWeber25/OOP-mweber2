@@ -3,7 +3,8 @@ FROM python:3
 RUN apt update \
   && apt install -y \
   g++ gcc make sqlite3 time curl git nano dos2unix \
-  net-tools iputils-ping iproute2 sudo gdb less 
+  net-tools iputils-ping iproute2 sudo gdb less \
+  && rm -rf /var/lib/apt/lists/* 
 
 ARG USER=user
 ARG UID=1000
@@ -21,10 +22,9 @@ RUN useradd -m -s /bin/bash -N -u $UID $USER && \
 
 WORKDIR ${HOME}
 
-RUN pip install --upgrade pip
-
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Install zsh - use "Bira" theme with some customization. 
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
@@ -36,4 +36,11 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 
 USER user
 
-CMD zsh
+COPY --chown=${USER}:${USER} . .
+
+EXPOSE 5000
+
+ENV FLASK_APP=weatherApp.py
+ENV FLASK_ENV=development
+
+CMD ["flask", "run", "--host=0.0.0.0"]
