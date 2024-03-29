@@ -10,3 +10,4 @@ requests
 kattis-cli
 Flask
 Werkzeug
+types-requests
