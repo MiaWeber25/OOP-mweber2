@@ -12,6 +12,18 @@ Coursework for CSCI 375 - Object Oriented Programming and Design Patterns
 
 ## Assignments 
 
+### Assignment #5
+
+| Name | Value |
+| :--- | :--- |
+| Name | OOP-A5 - JSON API |
+| Description | Create a Weather App using OOD. |
+| Due Date | 30-March-2024 |
+| Status | Done |
+| Location | https://github.com/MiaWeber25/OOP-mweber2/tree/main/A5-API |
+| Self Grade | 90/100 |
+| Notes | Test Coverage = 71% (95% + 48%). Struggled to test HTTP requests for Web App. CI/CD mypy failing but working locally - check screenshots folder. |
+
 ### Assignment #4
 
 | Name | Value |
