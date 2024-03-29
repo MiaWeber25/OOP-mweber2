@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Weather Result</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                <div class="card my-5">
+                  <h5 class="card-header text-center">Weather for {{ city }}</h5>
+                  <div class="card-body">
+                    <!-- Display the weather data here -->
+                    <p>Temperature: {{ temp_f }}°F</p>
+                    <p>Weather: {{ description }}</p>
+                    <img src="http://openweathermap.org/img/wn/{{ icon_code }}.png" alt="Weather icon">
+                  </div>
+                </div>
+                <div class=""card my-5">
+                    <h5 class="card-header text-center">Daily Forecast</h5>
+                    <div class="card-body">
+                        {% if daily_forecast %}
+                            <ul class="list-unstyled">
+                                {% for day in daily_forecast %}
+                                    <li class="media my-4">
+                                        <img class="mr-3" src="http://openweathermap.org/img/wn/{{ day.weather[0].icon }}.png" alt="Weather icon">
+                                        <div class="media-body">
+                                            <h5 class="mt-0 mb-1">{{ day.dt | date }}</h5>
+                                            <p>Day: {{ day.temp.day }}°F, Night: {{ day.temp.night }}°F</p>
+                                            <p>Weather Description: {{ day.weather[0].description }}</p>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                    </ul>
+                                    {% else %}
+                                    <p>No daily forecast data available.</p>
+                                    {% endif %}
+                    </div>
+                </div>
+                <div class="text-center">
+                  <a href="/" class="btn btn-custom">Search again</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
