@@ -12,6 +12,18 @@ Coursework for CSCI 375 - Object Oriented Programming and Design Patterns
 
 ## Assignments 
 
+### Assignment #6
+
+| Name | Value |
+| :--- | :--- |
+| Name | OOP-A6 - Inheritance |
+| Description | Use OOD to solve the Kattis problem Statistics. |
+| Due Date | 15-April-2024 |
+| Status | Done |
+| Location | https://github.com/MiaWeber25/OOP-mweber2/tree/main/A6-inheritance/statistics |
+| Self Grade | 100/100 |
+| Notes | Test Coverage = 98% (100% + 97%). CI/CD mypy failing because of the WeatherApp still. |
+
 ### Assignment #5
 
 | Name | Value |
