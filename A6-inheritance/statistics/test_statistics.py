@@ -24,9 +24,11 @@ class TestStatistics(unittest.TestCase):
         """ Test process_data """
         formatted_input = [len(input_data)] + input_data
         output = Statistics.process_data(formatted_input, case_number)
-        expected_output = f"Case {case_number}: {
-            min(input_data)} {max(input_data)} {
-                max(input_data) - min(input_data)}"
+        expected_output = (
+            f"Case {case_number}: "
+            f"{min(input_data)} {max(input_data)} "
+            f"{max(input_data) - min(input_data)}"
+        )
         self.assertEqual(output, expected_output)
 
     @given(st.lists(st.integers()))
