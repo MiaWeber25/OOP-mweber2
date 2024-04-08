@@ -14,8 +14,11 @@ class TestStatistics(unittest.TestCase):
         """ Test solve """
         data_set = DataSet(lst)
         data_set.case_number = case_num
-        expected_output = f"Case {case_num}: {
-            min(lst)} {max(lst)} {max(lst) - min(lst)}"
+        expected_output = (
+            f"Case {case_num}: "
+            f"{min(lst)} {max(lst)} "
+            f"{max(lst) - min(lst)}"
+        )
         self.assertEqual(Statistics.solve(data_set), expected_output)
 
     @given(st.lists(st.integers(), min_size=2), st.integers(min_value=1))
