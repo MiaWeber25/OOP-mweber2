@@ -22,9 +22,11 @@ class Statistics:
     @staticmethod
     def solve(data_set: DataSet) -> str:
         """ Method to format output """
-        return f"Case {data_set.case_number}: {
-            data_set.get_min()} {data_set.get_max()} {
-                data_set.get_range()}"
+        return (
+            f"Case {data_set.case_number}: "
+            f"{data_set.get_min()} {data_set.get_max()} "
+            f"{data_set.get_range()}"
+        )
 
     @staticmethod
     def process_data(input_data: list[int], case_number: int) -> str:
