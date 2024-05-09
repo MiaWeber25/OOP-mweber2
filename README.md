@@ -12,6 +12,18 @@ Coursework for CSCI 375 - Object Oriented Programming and Design Patterns
 
 ## Assignments 
 
+### Assignment #7
+
+| Name | Value |
+| :--- | :--- |
+| Name | OOP-A7 - Abstract Base Class and Operator Overloading |
+| Description | Use OOD to solve the Kattis problem Stacking Cups. |
+| Due Date | 10-May-2024 |
+| Status | Done |
+| Location | https://github.com/MiaWeber25/OOP-mweber2/tree/main/A7-abc/cups |
+| Self Grade | 100/100 |
+| Notes | Test Coverage = 100% (100% + 100% + 100%). |
+
 ### Assignment #6
 
 | Name | Value |
