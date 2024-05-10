@@ -50,9 +50,10 @@ class TestCupStacking(unittest.TestCase):
             for cup in c.data:
                 print(f"Cup: Radius={cup[0]}, Color={cup[1]}")
         # print(f"Cup data: {list(c.data)}")
-            self.assertEqual(len(
-                c.data), len(cups), f"Expected {
-                    len(cups)}, but got {len(c.data)}")
+            self.assertEqual(
+                len(c.data),
+                len(cups),
+                f"Expected {len(cups)}, but got {len(c.data)}")
         except ValueError as e:
             self.fail(f"Failed to read input correctly with error: {e}")
 

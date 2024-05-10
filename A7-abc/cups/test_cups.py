@@ -32,10 +32,10 @@ class TestMain(unittest.TestCase):
     )  # this was a nightmare -> causing problems!
     def test_main(self, input_data: List[Tuple[str, str]]) -> None:
         """ Test the main functionality - calls appropriate functions. """
-        formatted = f"{len(input_data)}\n" + "\n".join(
-            f"{item[0]} {
-                item[1]}" if item[0].isdigit() else f"{
-                    int(item[1]) * 2} {item[0]}" for item in input_data
+        formatted = f"{len(input_data)}\n"
+        formatted += "\n".join(
+            f"{item[0]} {item[1]}" if item[0].isdigit() else
+            f"{int(item[1]) * 2} {item[0]}" for item in input_data
         ) + '\n'
 
         with patch('sys.stdin', new=io.StringIO(formatted)), \
