@@ -1,5 +1,5 @@
 """
-Module to test Cups code (main code)
+Module to test the Cups code (main code)
 """
 import unittest
 from hypothesis import given, strategies as st
