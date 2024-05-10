@@ -49,7 +49,7 @@ class TestCupStacking(unittest.TestCase):
             print(f"Actual number of cups: {len(c.data)}")
             for cup in c.data:
                 print(f"Cup: Radius={cup[0]}, Color={cup[1]}")
-        # print(f"Cup data: {list(c.data)}")
+        # print(f"Cup data {list(c.data)}")
             self.assertEqual(
                 len(c.data),
                 len(cups),
