@@ -22,7 +22,7 @@ Coursework for CSCI 375 - Object Oriented Programming and Design Patterns
 | Status | Done |
 | Location | https://github.com/MiaWeber25/OOP-mweber2/tree/main/A7-abc/cups |
 | Self Grade | 100/100 |
-| Notes | Test Coverage = 100% (100% + 100% + 100%). |
+| Notes | Test Coverage = 100% (100% + 100% + 100%). CI/CD Passing again. |
 
 ### Assignment #6
 
