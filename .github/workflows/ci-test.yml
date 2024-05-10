@@ -39,8 +39,8 @@ jobs:
         # flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Check types with mypy A7
       run: |
-        mypy A7-abc/ --strict --allow-untyped-decorators --ignore-missing-imports .
+        mypy A7-abc/ --strict --allow-untyped-decorators --ignore-missing-imports
     - name: Test with pytest A7
       run: |
-        pytest A7-abc/ --verbose .
+        pytest A7-abc/ --verbose
         
