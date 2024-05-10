@@ -1,7 +1,7 @@
 MAIN = cups.py
 PY = python3
 
-# target and its dependencies followed by commands
+# target and its dependencies followed by command
 all: check_style check_types unittest localtest unittest_pytest submit clean
 	@echo "All done!"
 
